@@ -1,7 +1,7 @@
 import { afterEach, expect, test, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
-import Button from './Button';
+import { Button } from './Button';
 import userEvent from '@testing-library/user-event';
 
 afterEach(cleanup);
