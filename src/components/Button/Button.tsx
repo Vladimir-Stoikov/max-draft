@@ -11,7 +11,7 @@ interface ButtonProps extends ComponentProps<'button'> {
   rightIcon?: ReactElement;
 }
 
-export function Button({ variant = 'primary', size = 'm', isLoading = false, leftIcon, rightIcon, className = '', children, disabled, ...props }: ButtonProps) {
+export const Button = ({ variant = 'primary', size = 'm', isLoading = false, leftIcon, rightIcon, className = '', children, disabled, ...props }: ButtonProps) => {
   return (
     <button type='button' disabled={disabled || isLoading} className={clsx(styles.button, styles[variant], styles[size], className)} {...props}>
       {leftIcon && (
@@ -27,4 +27,4 @@ export function Button({ variant = 'primary', size = 'm', isLoading = false, lef
       )}
     </button>
   );
-}
+};
