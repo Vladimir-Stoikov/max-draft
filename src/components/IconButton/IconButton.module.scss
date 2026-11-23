@@ -13,6 +13,9 @@
 }
 
 .iconButton {
+  flex-shrink: 0;
+  box-sizing: border-box;
+
   &.s {
     width: 2rem;
     padding-inline: 0;

@@ -7,7 +7,8 @@ interface IconButtonProps extends ComponentProps<'button'> {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 's' | 'm' | 'l';
   isLoading?: boolean;
-  icon?: ReactElement;
+  icon: ReactElement;
+  children?: never;
 }
 
 export const IconButton = ({ variant = 'primary', size = 'm', isLoading = false, icon, className = '', disabled, ...props }: IconButtonProps) => {
