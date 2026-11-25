@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactElement } from 'react';
 import { Button } from '../Button/Button';
-import styles from './IconButton.module.scss';
+import styles from './iconButton.module.scss';
 import clsx from 'clsx';
 
 interface IconButtonProps extends ComponentProps<'button'> {

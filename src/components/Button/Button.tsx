@@ -1,19 +1,12 @@
 import clsx from 'clsx';
 import styles from './button.module.scss';
 
-import type { ComponentProps, ReactElement } from 'react';
+import { sizeStylesMap, variantStylesMap } from './style-maps';
+import type { ButtonProps } from './types';
 
-interface ButtonProps extends ComponentProps<'button'> {
-  variant?: 'primary' | 'secondary' | 'ghost';
-  size?: 's' | 'm' | 'l';
-  isLoading?: boolean;
-  leftIcon?: ReactElement;
-  rightIcon?: ReactElement;
-}
-
-export const Button = ({ variant = 'primary', size = 'm', isLoading = false, leftIcon, rightIcon, className = '', children, disabled, ...props }: ButtonProps) => {
+export const Button = ({ variant = 'primary', size = 'm', isLoading = false, leftIcon, rightIcon, type = 'button', className, children, disabled, ...props }: ButtonProps) => {
   return (
-    <button type='button' disabled={disabled || isLoading} className={clsx(styles.button, styles[variant], styles[size], className)} {...props}>
+    <button type={type} disabled={disabled || isLoading} className={clsx(styles.button, variantStylesMap.get(variant), sizeStylesMap.get(size), className)} {...props}>
       {leftIcon && (
         <span aria-hidden='true' className={styles.icon}>
           {leftIcon}
